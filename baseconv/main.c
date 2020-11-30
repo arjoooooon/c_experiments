@@ -4,7 +4,6 @@
 #include <string.h>
 
 int characterReference[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-
 int numericalReference[256];
 
 void usage(){
@@ -35,6 +34,11 @@ uint64_t conv_to_decimal(int base, char* input_string) {
     int len = strlen(input_string);
     
     for(int i = len-1; i > -1; i--) {
+        if(numericalReference[input_string[i] - 0] >= base) { 
+            printf("Input string does not match input base\n");
+            exit(1);
+        }
+
         ret += modifier * numericalReference[input_string[i] - 0];
         modifier *= base;
     }
