@@ -11,11 +11,11 @@ void usage(){
 }
 
 void construct_numerical_reference(){
-    for(int c = '0', i = 0; c <= '9'; c++, i++){
-        numericalReference[c] = i;
+    for(int c = 0x30; c < 0x3A; c++){
+        numericalReference[c] = c - 48;
     }
-    for(int c = 'A', i = 10; c <= 'F'; c++, i++){
-        numericalReference[c] = i;
+    for(int c = 0x41;  c < 0x5B; c++){
+        numericalReference[c] = c - 55;
     }
 }
 
