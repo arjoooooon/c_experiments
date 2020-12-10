@@ -36,12 +36,11 @@ int destroy_matrix(Matrix* M) {
 void print_matrix(Matrix* M) {
     printf("\n");
     for(int row = 0; row < M -> dims[0]; row++){
+        printf("| ");
         for(int col = 0; col < M -> dims[1]; col++){
-            if(col == 0) printf("| ");
             printf("%d ", M -> values[row][col]);
-            if(col == M -> dims[1] - 1) printf("|");
         }
-        printf("\n");
+        printf("|\n");
     }
 
     printf("\n");
