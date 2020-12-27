@@ -12,7 +12,6 @@ int main(int argc, char** argv) {
     print_matrix(&B);
 
     int comp = matmul(&C, &A, &B);
-    printf("Compatibility = %d\n", comp);
     print_matrix(&C);
 
     destroy_matrix(&A);
